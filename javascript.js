@@ -37,5 +37,5 @@ const calcAge = function(birthYear){
     return information;
 
 }
-const age1 = calcAge(1998);
-console.log(calcAge(1998));
+const age1 = calcAge(1991);
+console.log(calcAge(1991));
