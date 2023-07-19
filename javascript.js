@@ -25,7 +25,7 @@ const fruitProcessor = function(apples, oranges){
 }
 const age1 = fruitProcessor(5,0);
 console.log(fruitProcessor(5,0));
-*/
+
 const retirementTime = function(age){
     return 60 - age;
 }
@@ -39,3 +39,16 @@ const calcAge = function(birthYear){
 }
 const age1 = calcAge(1991);
 console.log(calcAge(1977));
+*/
+const housePay = function(salary){
+    return 0.03*salary;
+}
+const calcTax = function(salary){
+    const housinglavy = housePay(salary);
+    const tax = 0.05*salary;
+    const totalPay = tax + housinglavy;
+    const information = `You have successfully paid Kshs${totalPay} to the government. Kshs${tax} for paye and Kshs${housinglavy} for house levy`;
+    return information;
+}
+const pay = calcTax(10200);
+console.log(calcTax(10200));
