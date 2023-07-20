@@ -29,7 +29,7 @@ console.log(fruitProcessor(5,0));
 
 
 const retirementTime = function(age){
-    return 60 - age;
+    return 60 - age;//use arrow function
 }
 
 const calcAge = function(birthYear){
@@ -39,8 +39,8 @@ const calcAge = function(birthYear){
     if(remainingTime>0){
         return information;
     }else{
-        console.log(`You retired`);
-        return -1;
+        return  console.log(`You retired`);
+       
     }
     
 
@@ -49,7 +49,7 @@ const calcAge = function(birthYear){
 console.log(calcAge(1977));
 
 const housePay = function(salary){
-    return 0.03*salary;
+    return 0.03*salary;//try to implement with arrow function
 }
 const calcTax = function(salary){
     const housinglavy = housePay(salary);
@@ -61,7 +61,7 @@ const calcTax = function(salary){
 const pay = calcTax(10200);
 console.log(calcTax(10200));
 
-*/
+
 //Implementation of Arrow functions
 const calcScore = (a,b,c)=>(a+b+c)/3;
 const koalasScore = calcScore(2,3,34);
@@ -77,5 +77,22 @@ const checkWinner = function(avgKoalas, avgdolphine){
 }
 //const score = checkWinner(koalasScore, dolphineScore);
 checkWinner(34,69);
+*/
+
+//Arrays
+
+
+const calcAge = function(birthYear){
+    const age = 2037 - birthYear;
+    return age;
+}
+const friendsBirthYears = [2001,2003,1998];
+friendsBirthYears[2]=1996;
+const age1 = calcAge(friendsBirthYears[0]);
+const age2 = calcAge(friendsBirthYears[1]);
+const age3 = calcAge(friendsBirthYears[friendsBirthYears.length-1]);
+const ages = [calcAge(friendsBirthYears[0]),calcAge(friendsBirthYears[1]),calcAge(friendsBirthYears[friendsBirthYears.length-1])]
+console.log(ages);
+console.log(age1,age2,age3);
 
 
