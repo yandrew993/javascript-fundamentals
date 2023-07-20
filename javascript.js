@@ -23,8 +23,10 @@ const fruitProcessor = function(apples, oranges){
     const juice = `Juice with ${applePieces}apples and ${orangePieces}oranges`;
     return juice;
 }
+
 const age1 = fruitProcessor(5,0);
 console.log(fruitProcessor(5,0));
+
 
 const retirementTime = function(age){
     return 60 - age;
@@ -34,12 +36,18 @@ const calcAge = function(birthYear){
     const actualAge = 2037 - birthYear;
     const remainingTime = retirementTime(actualAge);
     const information = `You have ${remainingTime}years till retirement`;
-    return information;
+    if(remainingTime>0){
+        return information;
+    }else{
+        console.log(`You retired`);
+        return -1;
+    }
+    
 
 }
-const age1 = calcAge(1991);
+//const age1 = calcAge(1977);
 console.log(calcAge(1977));
-*/
+
 const housePay = function(salary){
     return 0.03*salary;
 }
@@ -52,3 +60,22 @@ const calcTax = function(salary){
 }
 const pay = calcTax(10200);
 console.log(calcTax(10200));
+
+*/
+//Implementation of Arrow functions
+const calcScore = (a,b,c)=>(a+b+c)/3;
+const koalasScore = calcScore(2,3,34);
+const dolphineScore = calcScore(34,17,38);
+const checkWinner = function(avgKoalas, avgdolphine){
+    if(avgKoalas>=2*avgdolphine){
+        return console.log(`Koalas won the title with ${avgKoalas} vs ${avgdolphine}`);
+    }else if(avgdolphine>=2*avgKoalas){
+        return console.log(`Dolphine won the title with ${avgdolphine} vs ${avgKoalas}`);
+    }else{
+        return console.log(`No team won..`);
+    }
+}
+//const score = checkWinner(koalasScore, dolphineScore);
+checkWinner(34,69);
+
+
