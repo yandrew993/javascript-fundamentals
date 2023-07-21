@@ -1,6 +1,6 @@
 "use strict"
 /*
-//Starting with functions
+//Starting with FUNCTIONS
 function logger(){
     console.log("Andrew Young")
 }
@@ -77,9 +77,9 @@ const checkWinner = function(avgKoalas, avgdolphine){
 }
 //const score = checkWinner(koalasScore, dolphineScore);
 checkWinner(34,69);
-*/
 
-//Arrays
+
+//ARRAYS
 
 
 const calcAge = function(birthYear){
@@ -88,11 +88,53 @@ const calcAge = function(birthYear){
 }
 const friendsBirthYears = [2001,2003,1998];
 friendsBirthYears[2]=1996;
+friendsBirthYears.push(2000);
+friendsBirthYears.shift();
 const age1 = calcAge(friendsBirthYears[0]);
 const age2 = calcAge(friendsBirthYears[1]);
 const age3 = calcAge(friendsBirthYears[friendsBirthYears.length-1]);
 const ages = [calcAge(friendsBirthYears[0]),calcAge(friendsBirthYears[1]),calcAge(friendsBirthYears[friendsBirthYears.length-1])]
 console.log(ages);
 console.log(age1,age2,age3);
+
+const calcTip = function(bill){
+   return bill>=50&&bill<=300?0.15*bill:0.2*bill;
+}
+const billValues = [125,555,44,300];
+//const bill1 = calcTip(billValues[0]);
+//const bill2 = calcTip(billValues[1]);
+//const bill3 = calcTip(billValues[2]);
+//const bill4 = calcTip(billValues[billValues.length-1]);
+const bills = [calcTip(billValues[0]),calcTip(billValues[1]),calcTip(billValues[2]),calcTip(billValues[billValues.length-1])];
+const totals = [billValues[0]+bills[0],billValues[1]+bills[1],billValues[2]+bills[2],billValues[billValues.length-1]+bills[bills.length-1]];
+console.log(billValues,bills,totals);
+//console.log(calcTip(bill1,bill2,bill3,bill4));
+*/
+
+//OBJECTS
+const details = {
+    firstName: "Andrew",
+    lastName: "Young",
+    birthYear: 1998,
+    hasDriversLicense: true,
+    calcAge: function(){
+        this.age =  2037 - this.birthYear;
+        return this.age;
+    },
+    getSummary:function(){
+    return`${this.firstName} is a ${this.age}-year old has ${this.hasDriversLicense?'a':'no'} drivers Licesece `;
+    },   
+    course: "Software Engineering",
+    friends: ['Gordon','Erick','James']
+}
+details.location = "Kisumu";
+const intrestedIn = prompt('What would you like to know about this guy. Select firstName,lastName,birthYear,Age or Course');
+console.log(details.calcAge());
+console.log(details.getSummary());//Implementation of Object methods
+if(details[intrestedIn]){
+    console.log(details[intrestedIn]);
+}else{
+    console.log(`Wrong choice please Select firstName,lastName,birthYear,Age or Course`);
+}
 
 
