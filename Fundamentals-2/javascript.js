@@ -207,7 +207,7 @@ for(let exercise=1;exercise<4;exercise++){
         console.log(`Lifting the gym in exercise${exercise} for the ${rep}time`);
     }
 }
-*/
+
 let dice = Math.trunc(Math.random()*6)+1;
 while(dice<6){
     console.log(`You rolled a ${dice}`);
@@ -216,6 +216,38 @@ while(dice<6){
         console.log(`Loop is about to end`);
     }
 }
+
+//Coding challenge
+
+const bills = [22,295,176,440,37,105,10,1100,86,52]
+const tips = [];
+const totals = [];
+const calcAge = function(bills){
+    return bills>=50&&bills<=300?0.15*bills:0.2*bills;
+}
+for(let i=0;i<bills.length;i++){
+    const tip = calcAge(bills[i]);
+    tips.push(tip)
+    const total = bills[i] + tip;
+    totals.push(total);
+}
+console.log(bills,tips,totals);
+*/
+//Coding challenge
+const checkPrimeNumber = function(number){
+    if(number<=1) return false;
+    for(let i = 2;i<=Math.sqrt(number);i++){
+        if(number%i===0)return false
+    }
+    
+    return true;
+}
+const check = checkPrimeNumber();
+const checkPoint1 = prompt('Enter any number to confirm');
+console.log(checkPrimeNumber(checkPoint1));
+//const checkPoint1 = prompt("Enter any number to confirm");
+
+
 
 
 
