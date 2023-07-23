@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 /*
 //Starting with FUNCTIONS
 function logger(){
@@ -232,7 +232,7 @@ for(let i=0;i<bills.length;i++){
     totals.push(total);
 }
 console.log(bills,tips,totals);
-*/
+
 //Coding challenge
 const checkPrimeNumber = function(number){
     if(number<=1) return false;
@@ -246,8 +246,21 @@ const check = checkPrimeNumber();
 const checkPoint1 = prompt('Enter any number to confirm');
 console.log(checkPrimeNumber(checkPoint1));
 //const checkPoint1 = prompt("Enter any number to confirm");
+*/
 
+//Coding challenge
 
-
-
-
+const temp1 = [23, 2, 4, 12, 3, 14, 56];
+const temp2 = [20, 47, 45, 67, 78];
+const temp3 = temp1.concat(temp2);
+let max = temp3[0];
+let min = temp3[0];
+const amplitudeTemp = function (temps1, temps2) {
+  for (let i = 0; i < temp1.length; i++) {
+    if (temp3[i] > max) max = temp1[i];
+    if (temp3[i] < min) min = temp1[i];
+  }
+  return max - min;
+};
+const amplitude = amplitudeTemp(temp1, temp2);
+console.log(max, min, amplitude);
