@@ -232,22 +232,22 @@ for(let i=0;i<bills.length;i++){
     totals.push(total);
 }
 console.log(bills,tips,totals);
-
+*/
 //Coding challenge
-const checkPrimeNumber = function(number){
-    if(number<=1) return false;
-    for(let i = 2;i<=Math.sqrt(number);i++){
-        if(number%i===0)return false
-    }
-    
-    return true;
-}
+const checkPrimeNumber = function (number) {
+  if (number <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+
+  return true;
+};
 const check = checkPrimeNumber();
-const checkPoint1 = prompt('Enter any number to confirm');
+const checkPoint1 = prompt("Enter any number to confirm");
 console.log(checkPrimeNumber(checkPoint1));
 //const checkPoint1 = prompt("Enter any number to confirm");
-*/
 
+/*
 //Coding challenge
 
 const temp1 = [23, 2, 4, 12, 3, 14, 56];
@@ -264,3 +264,5 @@ const amplitudeTemp = function (temps1, temps2) {
 };
 const amplitude = amplitudeTemp(temp1, temp2);
 console.log(max, min, amplitude);
+console.log(temp3);
+*/
