@@ -232,7 +232,7 @@ for(let i=0;i<bills.length;i++){
     totals.push(total);
 }
 console.log(bills,tips,totals);
-*/
+
 //Coding challenge
 const checkPrimeNumber = function (number) {
   if (number <= 1) return false;
@@ -247,7 +247,7 @@ const checkPoint1 = prompt("Enter any number to confirm");
 console.log(checkPrimeNumber(checkPoint1));
 //const checkPoint1 = prompt("Enter any number to confirm");
 
-/*
+
 //Coding challenge
 
 const temp1 = [23, 2, 4, 12, 3, 14, 56];
@@ -265,4 +265,36 @@ const amplitudeTemp = function (temps1, temps2) {
 const amplitude = amplitudeTemp(temp1, temp2);
 console.log(max, min, amplitude);
 console.log(temp3);
+
+//Coding Challenge
+
+const arrs = [45, 34, 25, 26];
+const printForcast = function (arr) {
+  let str = "";
+  for (let i = 0; i < arrs.length; i++) {
+    str += `${arrs[i]}°C in ${i + 1} days...`;
+  }
+  console.log("..." + str);
+};
+printForcast(arrs);
 */
+//Challenge
+const marks = [56, 65, 43, 67, 87, 10];
+const grades = [];
+let sum = 0;
+let avarage = 0;
+const avarageMarks = function (mark) {
+  for (let i = 0; i < marks.length; i++) {
+    sum += marks[i];
+    avarage = sum / (i + 1);
+    if (marks[i] > 0 && marks[i] < 40) {
+      grades.push("E");
+    } else if (marks[i] >= 40 && marks[i] < 50) {
+      grades.push("D");
+    } else {
+      grades.push("B");
+    }
+  }
+  return grades;
+};
+console.log(avarageMarks(marks));
