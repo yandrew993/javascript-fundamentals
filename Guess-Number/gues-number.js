@@ -21,7 +21,18 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".highscore").textContent = highscore;
       //document.querySelector(".score").textContent = 20;
     }
-  } else if (gues > secretNumber) {
+  } else if (gues !== secretNumber) {
+    if (score > 1) {
+      document.querySelector(".message").textContent =
+        gues > secretNumber ? "Too High" : "Too Low";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "You lost the game";
+      document.querySelector(".score").textContent = 0;
+    }
+  } /*
+  else if (gues > secretNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent = "Too high";
       score--;
@@ -39,7 +50,7 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "You lost the game";
       document.querySelector(".score").textContent = 0;
     }
-  }
+  } */
 });
 document.querySelector(".again").addEventListener("click", function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
