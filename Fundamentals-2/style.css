@@ -1,3 +1,15 @@
-body{
-    background-color:forestgreen ;
+body {
+  background-color: forestgreen;
+}
+.input {
+  margin: 2rem;
+  align-items: center;
+}
+.text {
+  margin-top: 0.5rem;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  border-radius: 0.5%;
+  padding-bottom: 0.5rem;
 }

@@ -277,7 +277,7 @@ const printForcast = function (arr) {
   console.log("..." + str);
 };
 printForcast(arrs);
-*/
+
 //Challenge
 const marks = [56, 65, 43, 67, 87, 10];
 const grades = [];
@@ -298,3 +298,51 @@ const avarageMarks = function (mark) {
   return grades;
 };
 console.log(avarageMarks(marks));
+*/
+function calcMarks() {
+  const sub1 = document.getElementById("subject1");
+  const subject1 = parseInt(sub1.value);
+  const sub2 = document.getElementById("subject2");
+  const subject2 = parseInt(sub2.value);
+  const sub3 = document.getElementById("subject3");
+  const subject3 = parseInt(sub3.value);
+  const sub4 = document.getElementById("subject4");
+  const subject4 = parseInt(sub4.value);
+  let avarage = Math.round((subject1 + subject2 + subject3 + subject4) / 4);
+  let grade, comment;
+  if (avarage >= 70) {
+    grade = "A";
+    comment = "Excellent";
+  } else if (avarage >= 60) {
+    grade = "B";
+    comment = "Very Good";
+  } else if (avarage >= 50) {
+    grade = "C";
+    comment = "Good";
+  } else {
+    grade = "D";
+    comment = "Poor";
+  }
+
+  const resultTable = document.getElementById("resultTable");
+  const newRow = resultTable.insertRow(-1);
+  const sub1cell = newRow.insertCell(0);
+  const sub2cell = newRow.insertCell(1);
+  const sub3cell = newRow.insertCell(2);
+  const sub4cell = newRow.insertCell(3);
+  const avaragecell = newRow.insertCell(4);
+  const gradecell = newRow.insertCell(5);
+  const commentcell = newRow.insertCell(6);
+
+  sub1cell.innerHTML = subject1;
+  sub2cell.innerHTML = subject2;
+  sub3cell.innerHTML = subject3;
+  sub4cell.innerHTML = subject4;
+  avaragecell.innerHTML = avarage;
+  gradecell.innerHTML = grade;
+  commentcell.innerHTML = comment;
+  sub1.value = "";
+  sub2.value = "";
+  sub3.value = "";
+  sub4.value = "";
+}

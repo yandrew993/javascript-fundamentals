@@ -10,20 +10,25 @@
   </head>
   <body>
     <p>JAVASCRIPT FUNDAMENTALS</p>
-    <table border="1">
-      <th>ADM NO</th>
-      <th>Name</th>
-      <th>subject1</th>
-      <th>subject2</th>
-      <th>subject3</th>
-      <th>subject4</th>
-      <tr>
-        <td>Andrew</td>
-        <td><input type="text" /></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
+    <div class="input">
+      <button onclick="calcMarks()">Check</button>
+      <label>subject1</label><input type="number" class="text" id="subject1" />
+      <label>subject2</label><input type="number" class="text" id="subject2" />
+      <label>subject3</label><input type="number" class="text" id="subject3" />
+      <label>subject4</label><input type="number" class="text" id="subject4" />
+    </div>
+    <div>
+      <table id="resultTable" border="1">
+        <tr>
+          <th>subject1</th>
+          <th>subject2</th>
+          <th>subject3</th>
+          <th>subject4</th>
+          <th>Avarage</th>
+          <th>Grade</th>
+          <th>Comment</th>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
