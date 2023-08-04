@@ -51,11 +51,15 @@ let next = document.querySelector(".next");
 let points = document.getElementById("score");
 let span = document.querySelectorAll("span");
 let stats = document.getElementById("stat");
+let answerBank = document.getElementById("answerBank");
+let answers = document.getElementById("answers");
+let remarks = document.getElementById("remarks");
+
 let i = 0;
 let score = 0;
 
 //function to display questions
-const displayQuestion = function () {
+function displayQuestion() {
   for (let a = 0; a < span.length; a++) {
     span[a].style.background = "none";
   }
@@ -66,10 +70,10 @@ const displayQuestion = function () {
   option3.textContent = questionBank[i].option[3];
   stats.textContent =
     "Question" + " " + (i + 1) + " " + "of" + " " + questionBank.length;
-};
+}
 
 //function to calculate scores
-const calcScore = function (e) {
+function calcScore(e) {
   if (e.textContent === questionBank[i].answer && score < questionBank.length) {
     score = score + 1;
     document.getElementById(e.id).style.background = "limegreen";
@@ -77,7 +81,7 @@ const calcScore = function (e) {
     document.getElementById(e.id).style.background = "tomato";
   }
   setTimeout(nextQuestion, 300);
-};
+}
 
 //function to display next question
 function nextQuestion() {
@@ -85,6 +89,11 @@ function nextQuestion() {
     i = i + 1;
     displayQuestion();
   } else {
+    if (score <= 3) {
+      remarks.textContent = "Good Trial";
+    } else {
+      remarks.textContent = "Congratulation";
+    }
     points.textContent = score + "/" + questionBank.length;
     quizContainer.style.display = "none";
     scoreboard.style.display = "block";
@@ -100,9 +109,7 @@ function backToQuiz() {
 }
 
 //function to check Answers
-const checkAnswer = function () {
-  let answerBank = document.getElementById("answerBank");
-  let answers = document.getElementById("answers");
+function checkAnswer() {
   answerBank.style.display = "block";
   scoreboard.style.display = "none";
   for (let a = 0; a < questionBank.length; a++) {
@@ -110,6 +117,6 @@ const checkAnswer = function () {
     list.textContent = questionBank[a].answer;
     answers.appendChild(list);
   }
-};
+}
 
 displayQuestion();
