@@ -298,7 +298,7 @@ const avarageMarks = function (mark) {
   return grades;
 };
 console.log(avarageMarks(marks));
-*/
+
 function calcMarks() {
   const sub1 = document.getElementById("subject1");
   const subject1 = parseInt(sub1.value);
@@ -345,4 +345,16 @@ function calcMarks() {
   sub2.value = "";
   sub3.value = "";
   sub4.value = "";
+}
+*/
+function moveButton() {
+  const button = document.querySelector(".No");
+  const areaWidth = 100;
+  const areaHeight = 50;
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const randomX = Math.floor(Math.random() * (windowWidth - areaWidth));
+  const randomY = Math.floor(Math.random() * (windowHeight - areaHeight));
+  button.style.left = `${randomX}px`;
+  button.style.top = `${randomY}px`;
 }

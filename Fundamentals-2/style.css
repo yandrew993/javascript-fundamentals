@@ -13,3 +13,12 @@ body {
   border-radius: 0.5%;
   padding-bottom: 0.5rem;
 }
+.No {
+  background-color: aqua;
+  cursor: pointer;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.hidden {
+  display: none;
+}
