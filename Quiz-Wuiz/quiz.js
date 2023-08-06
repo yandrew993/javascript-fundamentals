@@ -1,42 +1,55 @@
 "use strict";
 //Question bank
+const rate = [];
 const questionBank = [
   {
-    question:
-      "Eritrea, which became the 182nd member of the UN in 1993, is in the continent of",
-    option: ["Asia", "Africa", "Europe", "Australia"],
-    answer: "Africa",
+    question: "What do you think my name is?",
+    option: ["Andrew Youg", "George Gatete", "James Mainaina", "Andrew Young"],
+    answer: "Andrew Young",
   },
   {
-    question: "Garampani sanctuary is located at",
-    option: [
-      "Junagarh, Gujarat",
-      "Diphu, Assam",
-      "Kohima, Nagaland",
-      "Gangtok, Sikkim",
-    ],
-    answer: "Diphu, Assam",
+    question: "Which county i'm I coming from ?",
+    option: ["Siaya", "Migori", "Kisumu", "Kajiado"],
+    answer: "Kisumu",
   },
   {
-    question: "For which of the following disciplines is Nobel Prize awarded?",
-    option: [
-      "Physics and Chemistry",
-      "Physiology or Medicine",
-      "Literature, Peace and Economics",
-      "All of the above",
-    ],
-    answer: "All of the above",
-  },
-  {
-    question: "Hitler party which came into power in 1933 is known as",
-    option: ["Labour Party", "Nazi Party", "Ku-Klux-Klan", "Democratic Party"],
-    answer: "Nazi Party",
+    question: "Hey! can you guess my actual age? If yes please select",
+    option: ["26 years", "23 years", "19 years", "22 years"],
+    answer: "23 years",
   },
   {
     question:
-      "First human heart transplant operation conducted by Dr. Christiaan Barnard on Louis Washkansky, was conducted in",
-    option: ["1967", "1968", "1958", "1922"],
-    answer: "1967",
+      "Currently i'm a student in Kirinyaga university taking Bachelor of Science in?",
+    option: [
+      "Computer Science",
+      "Education",
+      "Software Engineering",
+      "Information Technology",
+    ],
+    answer: "Software Engineering",
+  },
+  {
+    question:
+      "I'M a fun of one of the big clubs in London. Which club could it be?",
+    option: ["Manchester City", "Arsenal", "Chelsea", "Manchester United"],
+    answer: "Manchester United",
+  },
+  {
+    question: "I'M a Kenyan citizen from which tribe?",
+    option: ["Kalenjin", "Luo", "Kamba", "Kikuyu"],
+    answer: "Luo",
+  },
+
+  {
+    question: "Hey! can you guess my marital status? if yes please select",
+    option: ["Abandoned", "Engaged", "Single", "Divorced"],
+    answer: "Single",
+  },
+  {
+    question:
+      "Which of these drinks do you think I like most and I frequently take?",
+    option: ["Coca-cola", "Wiskey", "Chrome", "Water"],
+    answer: "Water",
   },
 ];
 
@@ -54,9 +67,38 @@ let stats = document.getElementById("stat");
 let answerBank = document.getElementById("answerBank");
 let answers = document.getElementById("answers");
 let remarks = document.getElementById("remarks");
+let questions = document.querySelector(".questions");
+let initialRate = document.getElementById("initial-rate");
 
+let submitEl = document.getElementById("submit");
+let rateEl = document.querySelector(".rate");
+let provisionalEl = document.querySelector(".provisional");
+let commentEl = document.getElementById("comment");
 let i = 0;
 let score = 0;
+questions.classList.add("hidden");
+next.classList.add("hidden");
+
+submitEl.addEventListener("click", function () {
+  rateEl.classList.toggle("hidden");
+  provisionalEl.style.display = "block";
+  const initialScore = Number(document.querySelector(".rateme").value);
+  if (!initialScore) {
+    alert("Please enter your rate to proceed");
+    location.reload();
+  } else if (initialScore <= 0 || initialScore > 100) {
+    alert("Please enter a value between the scale given");
+    location.reload();
+  } else {
+    commentEl.textContent = `You gave me a Rate of ${initialScore}% `;
+  }
+});
+//console.log(initialScore);
+
+document.getElementById("proceed").addEventListener("click", function () {
+  provisionalEl.style.display = "none";
+  questions.classList.remove("hidden");
+});
 
 //function to display questions
 function displayQuestion() {
@@ -94,7 +136,9 @@ function nextQuestion() {
     } else {
       remarks.textContent = "Congratulation";
     }
-    points.textContent = score + "/" + questionBank.length;
+    const initialScore = Number(document.querySelector(".rateme").value);
+    initialRate.textContent = `Your initial Rate ${initialScore}%`;
+    points.textContent = Math.round((score / questionBank.length) * 100) + "%";
     quizContainer.style.display = "none";
     scoreboard.style.display = "block";
   }

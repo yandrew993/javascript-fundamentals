@@ -11,7 +11,19 @@
   <body>
     <img src="logo2.jpg" alt="img" id="img" class="img" />
     <h1 id="title">Today's Quiz</h1>
-
+    <div class="rate">
+      <h4>In a scale of (1 - 100)% how do you know me</h4>
+      <input type="number" class="rateme" /><br />
+      <button id="submit">Submit</button>
+    </div>
+    <div class="provisional">
+      <h2>Thank You!!</h2>
+      <h4 id="comment"></h4>
+      <h5>I have a challenge waiting for you!</h5>
+      <h5>Please click to proceed</h5>
+      <br />
+      <button id="proceed">Proceed</button>
+    </div>
     <!-- quiz-container -->
     <div id="quiz-container">
       <!-- question container -->
@@ -43,14 +55,13 @@
     <div id="scoreboard">
       <img src="logo2.jpg" alt="" />
       <h3 id="remarks"></h3>
+      <h3 id="initial-rate"></h3>
       <h2 id="score-title">Your Score</h2>
       <h2 id="score"></h2>
       <button type="button" id="score-btn" onclick="backToQuiz()">
         Back to Quiz
       </button>
-      <button type="button" id="check-answer" onclick="checkAnswer()">
-        Check Answers
-      </button>
+      <button type="button" id="check-answer" onclick="">Check Answers</button>
     </div>
 
     <!-- answers section -->
