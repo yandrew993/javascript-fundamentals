@@ -3,20 +3,19 @@
 const rate = [];
 const questionBank = [
   {
-    question: "What do you think my name is?",
-    option: ["Andrew Youg", "George Gatete", "James Mainaina", "Andrew Young"],
-    answer: "Andrew Young",
+    question: "What is my favorite colour?",
+    option: ["pink", "green", "blue", "purple"],
+    answer: "green",
   },
   {
-    question: "What is my approximate height ?",
-    option: ["1.69m", "1.74m", "1.81m", "1.92m"],
-    answer: "1.81m",
+    question: "What is my nickname ?",
+    option: ["Eddy", "Edi", "AD", "Edy"],
+    answer: "Eddy",
   },
   {
-    question:
-      "Hey! can you guess my actual age suppose i was borned 20 years ago? ",
-    option: ["26 years", "23 years", "19 years", "20 years"],
-    answer: "20 years",
+    question: "What is the name for the type of phone I have? ",
+    option: ["Tecno", "Nokia", "Samsung", "Infinix"],
+    answer: "Infinix",
   },
   {
     question: "Predict the range of my weight for the last four years?",
@@ -24,21 +23,20 @@ const questionBank = [
     answer: "(66 - 70)Kg",
   },
   {
-    question:
-      "i'm a fun of one of the big clubs in London. Which club could it be?",
-    option: ["Manchester City", "Arsenal", "Chelsea", "Manchester United"],
-    answer: "Manchester United",
+    question: "From which part of Kenya do I come from?",
+    option: ["Kisumu", "Nairobi", "Germany", "Japan"],
+    answer: "Kisumu",
   },
   {
-    question: "What is my favourite meal?",
-    option: ["Fish", "Pizza", "Hot Dog", "Beef"],
-    answer: "Fish",
+    question: "What is my favourite drink?",
+    option: ["Coca-colla", "Sprite", "Fanta", "Stoney"],
+    answer: "Coca-colla",
   },
 
   {
-    question: "Hey! can you guess my marital status? if yes please select",
-    option: ["Abandoned", "Engaged", "Single", "Divorced"],
-    answer: "Single",
+    question: "What is the second name of my elder  brother",
+    option: ["Young", "Okoth", "Hermans", "Hernington"],
+    answer: "Okoth",
   },
   {
     question: "Predict my favourite hobby?",
