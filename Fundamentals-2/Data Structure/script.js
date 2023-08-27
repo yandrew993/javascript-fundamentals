@@ -484,6 +484,8 @@ for (const [key, values] of gameEvents) {
 const popped = [...gameEvents.keys()].pop() / 10;
 console.log(popped);
 
+//Working with strings
+
 const airline = 'TAP Air Portugal';
 console.log(airline.slice(-2));
 console.log(airline.slice(0));
@@ -527,9 +529,105 @@ const checkName = (username, lastname, fullname) => {
   const imlastname = lastsName[0].toUpperCase() + lastname.slice(1);
   const imusername = usersName[0].toUpperCase() + username.slice(1);
   fullname = `${imusername}  ${imlastname}`;
-  console.log(fullname);
+  //console.log(fullname);
 };
-const usersName = prompt('Enter your name: ');
-const lastsName = prompt('Enter your lastname: ');
+// const usersName = prompt('Enter your name: ');
+// const lastsName = prompt('Enter your lastname: ');
 //console.log(usersName[0]);
-checkName(usersName, lastsName);
+//checkName(usersName, lastsName);
+
+const checkCourse = course => {
+  if (admNo.startsWith('PA106') && admNo.endsWith('21')) {
+    console.log('Software Engineering Year one');
+  } else if (admNo.startsWith('EE100') && admNo.endsWith('21')) {
+    console.log('Mechanical Engineering Year one');
+  }
+};
+//const admNo = prompt('Enter your admission');
+//checkCourse();
+const capitalizeName = name => {
+  const names = name.split(' ');
+  const nameUpperCase = [];
+  for (const n of names) {
+    // nameUpperCase.push(n[0].toUpperCase() + n.slice(1));
+    const word = n.toLowerCase();
+    nameUpperCase.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+  console.log(nameUpperCase.join(' '));
+};
+capitalizeName('joseph mark otiEno');
+capitalizeName('ann marion xhAvi');
+capitalizeName('michael ferdiNand smith');
+
+const muskCreditCard = acnumber => {
+  const str = acnumber + '';
+  // const first = str.slice(0, 2);
+  const last = str.slice(-2);
+  console.log(first);
+  return last.padStart(str.length, '*');
+};
+// console.log(muskCreditCard(0734567));
+// console.log(muskCreditCard(0734567));
+// console.log(muskCreditCard(0734567));
+
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+
+Afterwards, test with your own test data!
+
+GOOD LUCK 😀
+*/
+
+/*
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+*/
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  //console.log(text);
+  const rows = text.split('\n');
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    //const [first, second] = output.toLowerCase().trim();
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)} ${'✅'.repeat(i + 1)}`);
+  }
+});
+
+const texts = 'andrew_young felix_hendrix';
+const myName = texts.split('_');
+for (const l of myName) {
+  console.log(l);
+}
+const [initial, final] = myName;
+console.log(myName);
+
+//console.log(final);

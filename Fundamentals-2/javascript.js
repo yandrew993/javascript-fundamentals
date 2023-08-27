@@ -346,7 +346,7 @@ function calcMarks() {
   sub3.value = "";
   sub4.value = "";
 }
-*/
+
 function moveButton() {
   const button = document.querySelector(".No");
   const areaWidth = 100;
@@ -358,3 +358,79 @@ function moveButton() {
   button.style.left = `${randomX}px`;
   button.style.top = `${randomY}px`;
 }
+*/
+const andrew = {
+  location: "Nairobi",
+  birthYear: 1998,
+  calcAge: function (year) {
+    console.log(this);
+    return 2027 - this.birthYear;
+  },
+};
+console.log(andrew.calcAge());
+const stella = {
+  birthYear: 2012,
+};
+stella.calcAge = andrew.calcAge;
+console.log(stella.calcAge());
+
+// storing functions into variables
+// const f = stella.calcAge;
+// f();
+
+const myDetails = {
+  location: "cape town",
+  birthYear: 1998,
+  calcAge: function (year) {
+    // console.log(this);
+    const isMellenial = () => {
+      console.log(this.birthYear > 1980 && this.birthYear < 2000);
+    };
+    isMellenial();
+    return 2027 - this.birthYear;
+  },
+};
+myDetails.calcAge();
+
+/* 
+Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
+
+1. Create an array 'events' of the different game events that happened (no duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+      [FIRST HALF] 17: ⚽️ GOAL
+
+GOOD LUCK 😀
+*/
+
+// const myName = "jeyden ann biden";
+// const newName = myName.split(" ");
+// const tempName = [];
+// console.log(newName);
+// for (const n of newName) {
+//   const name = n.toLowerCase().replace(n[0], n[0].toUpperCase());
+//   tempName.push(name);
+// }
+// console.log(tempName.join(" "));
+
+const maskCreditCard = function (number) {
+  const cardNo = number + "";
+  const last = cardNo.slice(-4);
+  return last.padStart(cardNo.length, "*");
+};
+console.log(maskCreditCard(56478934));
+console.log(maskCreditCard(67543934));
+const marks = [];
+const convertMarks = (marks) => marks * 1.25;
+const convertPoints = (...mark) => {
+  for (const i of mark) {
+    const points = Math.round((convertMarks(i) / 100) * 12);
+    //console.log(points);
+    marks.push(points);
+  }
+};
+
+convertPoints(48, 56, 78, 50, 34);
+convertPoints(50, 50);
+console.log(marks);
