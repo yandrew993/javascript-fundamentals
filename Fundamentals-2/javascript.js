@@ -423,8 +423,8 @@ console.log(maskCreditCard(56478934));
 console.log(maskCreditCard(67543934));
 const marks = [];
 const convertMarks = (marks) => marks * 1.25;
-const convertPoints = (...mark) => {
-  for (const i of mark) {
+const convertPoints = (...marks) => {
+  for (const i of marks) {
     const points = Math.round((convertMarks(i) / 100) * 12);
     //console.log(points);
     marks.push(points);

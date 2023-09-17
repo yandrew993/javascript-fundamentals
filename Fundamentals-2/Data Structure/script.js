@@ -631,3 +631,16 @@ const [initial, final] = myName;
 console.log(myName);
 
 //console.log(final);
+
+const convertMarks = marks => marks * 1.25;
+const convertPoints = (...marks) => {
+  for (const i of marks) {
+    const points = Math.round((convertMarks(i) / 100) * 12);
+    //console.log(points);
+    marks.push(points);
+  }
+};
+
+convertPoints(48, 56, 78, 50, 34);
+convertPoints(50, 50);
+console.log(marks);
