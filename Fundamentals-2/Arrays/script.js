@@ -95,3 +95,4 @@ const openingHours = {
     close: 24,
   },
 };
+const a = 4;
