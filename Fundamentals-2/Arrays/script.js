@@ -61,6 +61,37 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const printDisplay = function (movements) {
+  movements.forEach((mov, i) => {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const html = `
+  <div class="movements">
+  <div class="movements__row">
+    <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+    <div class="movements__date">3 days ago</div>
+    <div class="movements__value">${mov}€</div>
+  </div>
+  `;
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+
+printDisplay(account1.movements);
+
+// Computing Usernames
+
+const createUsernames = function (accts) {
+  accts.forEach(function (acct) {
+    acct.username = acct.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -75,9 +106,9 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 movements.forEach(function (movement, i) {
   if (movement > 0) {
-    console.log(`You deposited ${movement} at the ${i + 1} place`);
+    //console.log(`You deposited ${movement} at the ${i + 1} place`);
   } else {
-    console.log(`You withdrew ${Math.abs(movement)}`);
+    // console.log(`You withdrew ${Math.abs(movement)}`);
   }
 });
 
@@ -95,23 +126,6 @@ const openingHours = {
     close: 24,
   },
 };
-
-const printDisplay = function (movements) {
-  movements.forEach((mov, i) => {
-    const type = mov > 0 ? 'deposit' : 'withdrawal';
-    const html = `
-  <div class="movements">
-  <div class="movements__row">
-    <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-    <div class="movements__date">3 days ago</div>
-    <div class="movements__value">${mov}€</div>
-  </div>
-  `;
-    containerMovements.insertAdjacentHTML('afterbegin', html);
-  });
-};
-
-printDisplay(account1.movements);
 
 // Coding Challenge #1
 
@@ -140,7 +154,7 @@ const checkDogs = function (dogsJulia, dogsKate) {
   // dogsJulia.splice(0, 1);
   //  dogsJulia.splice(-2);
   const dogsJuliaCorrected = dogsJulia.slice(1, 3);
-  console.log(dogsJuliaCorrected);
+  // console.log(dogsJuliaCorrected);
   const dogsAll = dogsKate.concat(dogsJuliaCorrected);
   dogsAll.forEach((dog, i) => {
     dog < 3 &&
@@ -152,3 +166,13 @@ const checkDogs = function (dogsJulia, dogsKate) {
   });
 };
 checkDogs(Julia, Kate);
+
+const checkAcount = movements.map(currency => {
+  return currency * 1.1;
+});
+
+//console.log(checkAcount);
+
+// Filter
+const deposits = movements.filter(mov => mov < 0);
+console.log(deposits);
