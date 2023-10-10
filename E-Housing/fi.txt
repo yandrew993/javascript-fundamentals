@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    float total = 0, counter = 0, milesDriven, gallonsUsed, milesPerGallon, aveMilesPerGallon;
+
+    printf("Enter the miles driven (-1 to end): ");
+    scanf("%f", &milesDriven);
+
+    while (milesDriven != -1) {
+        printf("Enter gallons used: ");
+        scanf("%f", &gallonsUsed);
+
+        milesPerGallon = milesDriven / gallonsUsed;
+        printf("Miles per Gallon for this tank was: %f\n\n", milesPerGallon);
+
+        counter = counter + 1;
+        total = total + milesPerGallon;
+
+        printf("Enter the miles driven (-1 to end): ");
+        scanf("%f", &milesDriven);
+    }
+
+    if (counter != 0) {
+        aveMilesPerGallon = total / counter;
+        printf("Overall average miles per gallon for this tank was: %f\n", aveMilesPerGallon);
+    }
+
+    return 0;
+}
